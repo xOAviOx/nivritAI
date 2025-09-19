@@ -161,6 +161,8 @@ typings/
 # WhatsApp session data
 whatsapp-session/
 *.session
+.wwebjs_auth/
+.wwebjs_cache/
 
 # IDE files
 .vscode/
