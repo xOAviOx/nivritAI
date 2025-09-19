@@ -1,0 +1,216 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e90ff;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0d7ce8;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Gradient backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, #1e90ff 0%, #38a169 100%);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, #38a169 0%, #4caf50 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff9800 100%);
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Chat bubble styles */
+.chat-bubble-user {
+  background: linear-gradient(135deg, #1e90ff 0%, #0d7ce8 100%);
+  color: white;
+  border-radius: 18px 18px 4px 18px;
+}
+
+.chat-bubble-bot {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  color: #333;
+  border-radius: 18px 18px 18px 4px;
+  border: 1px solid #dee2e6;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styles */
+.btn-primary {
+  background: linear-gradient(135deg, #1e90ff 0%, #0d7ce8 100%);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(30, 144, 255, 0.3);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #38a169 0%, #2d7a4a 100%);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(56, 161, 105, 0.3);
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  /* Improve touch targets */
+  button,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+  }
+
+  /* Better spacing for mobile */
+  .space-y-4 > * + * {
+    margin-top: 1rem;
+  }
+
+  .space-y-6 > * + * {
+    margin-top: 1.5rem;
+  }
+
+  /* Improve readability on small screens */
+  .text-sm {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  /* Better form styling for mobile */
+  input,
+  select,
+  textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  /* Improve button spacing */
+  .flex.space-x-2 > * + * {
+    margin-left: 0.5rem;
+  }
+
+  .flex.space-x-3 > * + * {
+    margin-left: 0.75rem;
+  }
+
+  .flex.space-x-4 > * + * {
+    margin-left: 1rem;
+  }
+}
+
+/* Tablet improvements */
+@media (min-width: 641px) and (max-width: 1024px) {
+  /* Better spacing for tablets */
+  .space-y-6 > * + * {
+    margin-top: 1.5rem;
+  }
+
+  .space-y-8 > * + * {
+    margin-top: 2rem;
+  }
+}
+
+/* Improve focus states for accessibility */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #1e90ff;
+  outline-offset: 2px;
+}
+
+/* Better hover states for touch devices */
+@media (hover: none) {
+  .hover\:bg-gray-100:hover {
+    background-color: transparent;
+  }
+
+  .hover\:bg-gray-200:hover {
+    background-color: transparent;
+  }
+
+  .hover\:bg-gray-300:hover {
+    background-color: transparent;
+  }
+
+  .hover\:scale-105:hover {
+    transform: none;
+  }
+
+  .hover\:-translate-y-2:hover {
+    transform: none;
+  }
+}

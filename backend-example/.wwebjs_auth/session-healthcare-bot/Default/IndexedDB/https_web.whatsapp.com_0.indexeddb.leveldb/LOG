@@ -1,0 +1,28 @@
+2025/09/20-00:02:07.102 f303 Reusing MANIFEST /Users/avishukla/Downloads/nivrit ai/backend-example/.wwebjs_auth/session-healthcare-bot/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/09/20-00:02:07.103 f303 Recovering log #368
+2025/09/20-00:02:07.115 f303 Reusing old log /Users/avishukla/Downloads/nivrit ai/backend-example/.wwebjs_auth/session-healthcare-bot/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000368.log 
+2025/09/20-00:02:08.771 22003 Level-0 table #380: started
+2025/09/20-00:02:08.779 22003 Level-0 table #380: 335266 bytes OK
+2025/09/20-00:02:08.788 22003 Delete type=0 #368
+2025/09/20-00:02:08.789 22003 Manual compaction at level-0 from '\x00.\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00/\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/09/20-00:02:09.819 9e03 Compacting 1@1 + 8@2 files
+2025/09/20-00:02:09.870 9e03 Generated table #381@1: 54101 keys, 2216147 bytes
+2025/09/20-00:02:09.887 9e03 Generated table #382@1: 3747 keys, 2161037 bytes
+2025/09/20-00:02:09.903 9e03 Generated table #383@1: 2750 keys, 2153689 bytes
+2025/09/20-00:02:09.935 9e03 Generated table #384@1: 14182 keys, 2187073 bytes
+2025/09/20-00:02:09.967 9e03 Generated table #385@1: 28314 keys, 2253191 bytes
+2025/09/20-00:02:09.992 9e03 Generated table #386@1: 18614 keys, 2184085 bytes
+2025/09/20-00:02:10.033 9e03 Generated table #387@1: 89341 keys, 2235973 bytes
+2025/09/20-00:02:10.077 9e03 Generated table #388@1: 100842 keys, 2252273 bytes
+2025/09/20-00:02:10.082 9e03 Generated table #389@1: 838 keys, 21991 bytes
+2025/09/20-00:02:10.082 9e03 Compacted 1@1 + 8@2 files => 17665459 bytes
+2025/09/20-00:02:10.090 9e03 compacted to: files[ 0 0 9 0 0 0 0 ]
+2025/09/20-00:02:10.090 9e03 Delete type=2 #377
+2025/09/20-00:02:10.090 9e03 Delete type=2 #376
+2025/09/20-00:02:10.090 9e03 Delete type=2 #374
+2025/09/20-00:02:10.090 9e03 Delete type=2 #375
+2025/09/20-00:02:10.090 9e03 Delete type=2 #371
+2025/09/20-00:02:10.090 9e03 Delete type=2 #370
+2025/09/20-00:02:10.090 9e03 Delete type=2 #372
+2025/09/20-00:02:10.090 9e03 Delete type=2 #373
+2025/09/20-00:02:10.090 9e03 Delete type=2 #380
