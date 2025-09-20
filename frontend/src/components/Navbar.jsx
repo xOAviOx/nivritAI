@@ -10,16 +10,20 @@ import {
   MapPin,
 } from "lucide-react";
 
-const Navbar = () => {
+const Navbar = ({ user, admin, onLogout }) => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const navItems = [
     { name: "Home", path: "/", icon: Home },
     { name: "Chatbot", path: "/chatbot", icon: MessageCircle },
-    { name: "Centers", path: "/centers", icon: MapPin },
-    { name: "Register", path: "/register", icon: UserPlus },
-    { name: "Admin", path: "/admin", icon: Shield },
+    { name: "Centers", path: "/healthcare-centers", icon: MapPin },
+    ...(user || admin
+      ? []
+      : [
+          { name: "Register", path: "/register", icon: UserPlus },
+          { name: "Admin Login", path: "/admin-login", icon: Shield },
+        ]),
   ];
 
   return (
@@ -59,6 +63,47 @@ const Navbar = () => {
                   </Link>
                 );
               })}
+
+              {/* User Profile Section */}
+              {user && (
+                <div className="flex items-center space-x-3 ml-4 pl-4 border-l border-gray-200">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                      <span className="text-white text-sm font-medium">
+                        {user.name?.charAt(0)?.toUpperCase()}
+                      </span>
+                    </div>
+                    <span className="text-sm font-medium text-gray-700">
+                      {user.name}
+                    </span>
+                  </div>
+                  <button
+                    onClick={onLogout}
+                    className="px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-primary rounded-md transition-colors duration-200"
+                  >
+                    Logout
+                  </button>
+                </div>
+              )}
+
+              {admin && (
+                <div className="flex items-center space-x-3 ml-4 pl-4 border-l border-gray-200">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                      <Shield className="h-4 w-4 text-white" />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700">
+                      Admin
+                    </span>
+                  </div>
+                  <button
+                    onClick={onLogout}
+                    className="px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-red-600 rounded-md transition-colors duration-200"
+                  >
+                    Logout
+                  </button>
+                </div>
+              )}
             </div>
           </div>
 
@@ -102,6 +147,57 @@ const Navbar = () => {
                 </Link>
               );
             })}
+
+            {/* Mobile User Profile Section */}
+            {user && (
+              <div className="px-4 py-3 border-t border-gray-200 mt-2">
+                <div className="flex items-center space-x-3 mb-3">
+                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                    <span className="text-white text-lg font-medium">
+                      {user.name?.charAt(0)?.toUpperCase()}
+                    </span>
+                  </div>
+                  <div>
+                    <p className="text-base font-medium text-gray-700">
+                      {user.name}
+                    </p>
+                    <p className="text-sm text-gray-500">{user.email}</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => {
+                    onLogout();
+                    setIsOpen(false);
+                  }}
+                  className="w-full px-4 py-2 text-sm font-medium text-white bg-primary hover:bg-primary-dark rounded-lg transition-colors duration-200"
+                >
+                  Logout
+                </button>
+              </div>
+            )}
+
+            {admin && (
+              <div className="px-4 py-3 border-t border-gray-200 mt-2">
+                <div className="flex items-center space-x-3 mb-3">
+                  <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
+                    <Shield className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-base font-medium text-gray-700">Admin</p>
+                    <p className="text-sm text-gray-500">{admin.email}</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => {
+                    onLogout();
+                    setIsOpen(false);
+                  }}
+                  className="w-full px-4 py-2 text-sm font-medium text-white bg-red-500 hover:bg-red-600 rounded-lg transition-colors duration-200"
+                >
+                  Logout
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}

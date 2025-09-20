@@ -7,7 +7,7 @@ export const WHATSAPP_CONFIG = {
   DEFAULT_MESSAGE: "Hey Nivrit AI",
 
   // Backend API URL (adjust if your backend runs on different port)
-  API_BASE_URL: "http://localhost:5000",
+  API_BASE_URL: "http://localhost:5002",
 
   // WhatsApp Web URL format
   getWhatsAppUrl: (phoneNumber, message) => {

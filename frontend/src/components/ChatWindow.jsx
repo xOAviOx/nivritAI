@@ -19,7 +19,7 @@ const ChatWindow = ({ onSendWhatsApp, onSendSMS }) => {
   const [selectedLanguage, setSelectedLanguage] = useState("en");
   const [isTyping, setIsTyping] = useState(false);
   const [isDialogflowEnabled, setIsDialogflowEnabled] = useState(true);
-  const [lastIntent, setLastIntent] = useState(null);
+  // const [lastIntent, setLastIntent] = useState(null); // Removed unused
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -65,7 +65,7 @@ const ChatWindow = ({ onSendWhatsApp, onSendSMS }) => {
             confidence: dialogflowResponse.confidence,
             isDialogflow: true,
           };
-          setLastIntent(dialogflowResponse.intent);
+          // setLastIntent(dialogflowResponse.intent); // Commented out unused
         } else {
           // Fallback to original response
           const fallbackResponse = generateBotResponse(
