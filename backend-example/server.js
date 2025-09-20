@@ -650,8 +650,8 @@ app.post("/api/dialogflow", async (req, res) => {
     // Get or create model
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-    // Create healthcare-focused prompt
-    const healthcarePrompt = `You are a friendly healthcare helper for village people. Keep your answers SHORT and SIMPLE.
+    // Create NivritAI-focused prompt
+    const nivritAIPrompt = `You are NivritAI, a friendly health assistant for village people. Keep your answers SHORT and SIMPLE.
 
 IMPORTANT RULES:
 1. Reply in the SAME LANGUAGE as the user's question (${
@@ -668,7 +668,7 @@ IMPORTANT RULES:
 User's question: ${message}`;
 
     // Generate response
-    const result = await model.generateContent(healthcarePrompt);
+    const result = await model.generateContent(nivritAIPrompt);
     const response = await result.response;
     let text = response.text();
 
@@ -691,7 +691,7 @@ User's question: ${message}`;
     res.json({
       success: true,
       fulfillmentText: text,
-      intent: "healthcare_assistant",
+      intent: "nivrit_ai_assistant",
       confidence: 0.95,
       language: detectedLanguage,
       sessionId: sessionId,
@@ -743,7 +743,7 @@ app.post("/api/gemini", async (req, res) => {
     };
 
     // Create healthcare-focused prompt
-    const healthcarePrompt = `You are Nivrit AI, a friendly healthcare assistant. You help people with health questions, vaccination schedules, and medical guidance.
+    const nivritAIPrompt = `You are Nivrit AI, a friendly healthcare assistant. You help people with health questions, vaccination schedules, and medical guidance.
 
 IMPORTANT RULES:
 1. Reply EXCLUSIVELY in ${getLanguageName(
@@ -765,7 +765,7 @@ IMPORTANT RULES:
 User's question: ${message}`;
 
     // Generate response
-    const result = await model.generateContent(healthcarePrompt);
+    const result = await model.generateContent(nivritAIPrompt);
     const response = await result.response;
     let text = response.text();
 
@@ -788,7 +788,7 @@ User's question: ${message}`;
     res.json({
       success: true,
       fulfillmentText: text,
-      intent: "healthcare_assistant",
+      intent: "nivrit_ai_assistant",
       confidence: 0.95,
       language: detectedLanguage,
       sessionId: sessionId,
@@ -870,7 +870,7 @@ app.get("/api/session/:sessionId", (req, res) => {
   }
 });
 
-// Healthcare centers finder endpoint
+// NivritAI centers finder endpoint
 app.post("/api/healthcare-centers", async (req, res) => {
   try {
     const { location, type = "hospital" } = req.body;
@@ -917,10 +917,10 @@ app.post("/api/healthcare-centers", async (req, res) => {
       total: centers.length,
     });
   } catch (error) {
-    console.error("Healthcare centers error:", error);
+    console.error("NivritAI centers error:", error);
     res.status(500).json({
       success: false,
-      error: "Failed to fetch healthcare centers",
+      error: "Failed to fetch NivritAI centers",
       fallback:
         "Please check your local government health website or call emergency services.",
     });
@@ -1013,7 +1013,7 @@ app.use((error, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`\n🚀 Healthcare Chatbot Server running on port ${PORT}`);
+  console.log(`\n🚀 NivritAI Chatbot Server running on port ${PORT}`);
   console.log(
     `🌐 Website Gemini AI: ${
       process.env.GEMINI_API_KEY ? "Configured" : "Not configured"

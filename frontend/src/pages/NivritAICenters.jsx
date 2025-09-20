@@ -18,7 +18,7 @@ import {
   Users,
 } from "lucide-react";
 
-const HealthcareCenters = () => {
+const NivritAICenters = () => {
   const [centers, setCenters] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -26,8 +26,8 @@ const HealthcareCenters = () => {
   const [location, setLocation] = useState("");
   const [userLocation, setUserLocation] = useState(null);
 
-  // Healthcare centers data
-  const healthcareCentersData = {
+  // NivritAI centers data
+  const nivritAICentersData = {
     hospital: [
       {
         name: "All India Institute of Medical Sciences (AIIMS)",
@@ -317,7 +317,7 @@ const HealthcareCenters = () => {
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       // Use hardcoded data based on search type
-      const data = healthcareCentersData[searchType] || [];
+      const data = nivritAICentersData[searchType] || [];
       setCenters(data);
     } catch (err) {
       setError("Network error. Please try again.");
@@ -664,4 +664,4 @@ const HealthcareCenters = () => {
   );
 };
 
-export default HealthcareCenters;
+export default NivritAICenters;

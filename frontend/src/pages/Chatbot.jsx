@@ -117,7 +117,7 @@ const Chatbot = () => {
                 AI Health Assistant
               </h1>
               <p className="text-base sm:text-lg text-gray-600">
-                Ask me anything about healthcare
+                Ask me anything about health
               </p>
             </div>
           </div>

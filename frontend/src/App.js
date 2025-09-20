@@ -10,7 +10,7 @@ import AccountPage from "./components/AccountPage";
 import AdminPanel from "./components/AdminPanel";
 import AdminLogin from "./components/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
-import HealthcareCenters from "./pages/HealthcareCenters";
+import NivritAICenters from "./pages/NivritAICenters";
 import authService from "./services/authService";
 import "./index.css";
 
@@ -96,7 +96,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/chatbot" element={<Chatbot />} />
-            <Route path="/healthcare-centers" element={<HealthcareCenters />} />
+            <Route path="/nivrit-ai-centers" element={<NivritAICenters />} />
             <Route path="/admin-dashboard" element={<AdminDashboard />} />
             <Route
               path="/account"

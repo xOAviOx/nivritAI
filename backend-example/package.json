@@ -1,7 +1,7 @@
 {
-  "name": "healthcare-chatbot-backend",
+  "name": "nivrit-ai-backend",
   "version": "1.0.0",
-  "description": "Backend API for healthcare chatbot with Dialogflow integration",
+  "description": "Backend API for NivritAI chatbot with Dialogflow integration",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

@@ -17,7 +17,7 @@ const Navbar = ({ user, admin, onLogout }) => {
   const navItems = [
     { name: "Home", path: "/", icon: Home },
     { name: "Chatbot", path: "/chatbot", icon: MessageCircle },
-    { name: "Centers", path: "/healthcare-centers", icon: MapPin },
+    { name: "Centers", path: "/nivrit-ai-centers", icon: MapPin },
     ...(user || admin
       ? []
       : [

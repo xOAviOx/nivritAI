@@ -118,7 +118,7 @@ const Home = () => {
             >
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
                 AI-Powered
-                <span className="block text-yellow-300">Healthcare</span>
+                <span className="block text-yellow-300">NivritAI</span>
                 <span className="block">Assistant</span>
               </h1>
               <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-blue-100 leading-relaxed max-w-2xl mx-auto lg:mx-0">
@@ -242,7 +242,7 @@ const Home = () => {
               Why Choose Our Platform?
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-              We combine cutting-edge AI technology with healthcare expertise to
+              We combine cutting-edge AI technology with health expertise to
               provide personalized, multilingual health assistance.
             </p>
           </motion.div>
@@ -385,10 +385,10 @@ const Home = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl font-bold text-white mb-6">
-              Ready to Transform Healthcare?
+              Ready to Transform Health?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Join thousands of families who trust our AI-powered healthcare
+              Join thousands of families who trust our AI-powered health
               platform for their vaccination and health needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

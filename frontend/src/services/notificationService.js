@@ -41,7 +41,7 @@ class NotificationService {
           title: "Appointment Reminder",
           message:
             customMessage ||
-            "You have a healthcare appointment scheduled. Please arrive 15 minutes early and bring your health records. 📅 #AppointmentReminder #NivritAI",
+            "You have a health appointment scheduled. Please arrive 15 minutes early and bring your health records. 📅 #AppointmentReminder #NivritAI",
         },
       };
 
